@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+.person_field {
+  display: flex;
+  background-color: #e5e5e5;
+}
+.person_info {
+  margin: 31px 98px 0px 57px;
+}
+.person_info2 {
+  margin-top: 29px;
+}
+.main_text {
+  margin: 0 0 12px 0;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+}
+.name_link {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+.person_img {
+  border-radius: 50%;
+}
+.person_follows {
+    margin-top: 25px;
+    display: flex;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: black;
+}
+.person_follows span:nth-child(2) {
+    margin-left: 25px;
+}

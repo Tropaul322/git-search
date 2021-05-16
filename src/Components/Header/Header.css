@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+
+  background: #0064eb;
+  height: 72px;
+}
+.header_logo {
+  margin: 16px 0px 16px 41px;
+}
+.input_box {
+  margin: 16px 0px 16px 22px;
+}
