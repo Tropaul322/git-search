@@ -1,7 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 .person_field {
+  height: 100%;
+}
+.person_field-container {
+  max-width: 1366px;
+  height: 100%;
+  margin: 0 auto;
   display: flex;
-  background-color: #e5e5e5;
 }
 .person_info {
   margin: 31px 98px 0px 57px;
@@ -13,7 +18,7 @@
   margin: 0 0 12px 0;
   font-family: Inter;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 26px;
 }
 .name_link {
@@ -27,8 +32,8 @@
   border-radius: 50%;
 }
 .person_follows {
-    margin-top: 25px;
-    display: flex;
+  margin-top: 25px;
+  display: flex;
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
@@ -36,6 +41,6 @@
   line-height: 150%;
   color: black;
 }
-.person_follows span:nth-child(2) {
-    margin-left: 25px;
+.person_follows div:nth-child(2) {
+  margin-left: 25px;
 }

@@ -15,3 +15,13 @@
 
   color: #000000;
 }
+.Repos_container{
+   margin: 28px 0px 30px 
+}
+.Repos_container h1{
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+}

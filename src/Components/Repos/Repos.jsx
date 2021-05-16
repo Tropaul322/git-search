@@ -1,25 +1,13 @@
 import { React } from "react";
 import { List } from "antd";
-import { MessageOutlined, LikeOutlined, StarOutlined } from "@ant-design/icons";
 import "./Repos.css";
+import { connect } from "react-redux";
+import { ACTIONS } from "../../store/actions/creators";
 
-const Repos = () => {
-  const listData = [];
-  for (let i = 0; i < 23; i++) {
-    listData.push({
-      href: "https://ant.design",
-      title: `ant design part ${i}`,
-      avatar:
-        "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-      description:
-        "Ant Design, a design language for background applications, is refined by Ant UED Team.",
-      content:
-        "We supply a series of design principles, practical patterns and high quality design resources",
-    });
-  }
+const Repos = ({ repos }) => {
   return (
     <div className="Repos_container">
-      <h1>Repositories (10)</h1>
+      <h1>Repositories ({`${repos.length}`})</h1>
       <List
         style={{
           whiteSpace: "nowrap",
@@ -29,12 +17,11 @@ const Repos = () => {
         itemLayout="vertical"
         size="large"
         pagination={{
-          onChange: (page) => {
-            console.log(page);
-          },
+          showTotal: (total, range) =>
+            `${range[0]}-${range[1]} of ${total} items`,
           pageSize: 4,
         }}
-        dataSource={listData}
+        dataSource={repos}
         renderItem={(item) => (
           <List.Item
             style={{
@@ -43,25 +30,30 @@ const Repos = () => {
               width: "877px",
               height: "112px",
             }}
-            key={item.title}
+            key={item.name}
           >
             <List.Item.Meta
               title={
                 <a
                   className="link"
                   style={{ color: "#0064EB" }}
-                  href={item.href}
+                  href={item.html_url}
                 >
-                  {item.title}
+                  {item.name}
                 </a>
               }
-              /* description={item.description} */
             />
-            <span className="descr">{item.content}</span>
+            <span className="descr">{item.description}</span>
           </List.Item>
         )}
       />
     </div>
   );
 };
-export default Repos;
+const mapStateToProps = (state) => ({
+  repos: state.pages.repos,
+});
+
+export default connect(mapStateToProps, {
+  setRepos: ACTIONS.setRepos,
+})(Repos);
