@@ -1,6 +1,7 @@
-import { SET_USER, SET_MESSAGE, SET_REPOS } from "../actions/types";
+import { SET_USER, SET_MESSAGE, SET_REPOS, SET_LOADING } from "../actions/types";
 const defState = {
   user: {},
+  isLoading: false,
   message: false,
   repos: []
 };
@@ -13,6 +14,8 @@ export default function (state = defState, action) {
       return { ...state, message: action.message };
     case SET_REPOS:
       return {...state, repos: action.repos};
+    case SET_LOADING:
+      return {...state, isLoading: action.isLoading};
     default:
       return state;
   }

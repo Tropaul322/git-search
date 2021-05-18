@@ -1,13 +1,15 @@
 import { React } from "react";
 import "./PersonInfo.css";
 import Repos from "../Repos/Repos";
+import StartPage from '../StartPage/StartPage'
+import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import { TeamOutlined, UserOutlined } from "@ant-design/icons";
-
+import Spinner from '../Spinner/Sninner'
 import { connect } from "react-redux";
 import { ACTIONS } from "../../store/actions/creators";
 
-const PersonInfo = ({ message, user, setMessage }) => {
-  return user.login ? (
+const PersonInfo = ({ message, user, isLoading }) => {
+  return isLoading ? (<Spinner/>) : user.login ? (
     <div className="person_field">
       <div className="person_field-container">
         <div className="person_info">
@@ -23,7 +25,7 @@ const PersonInfo = ({ message, user, setMessage }) => {
           <div className="person_info2">
             <div>
               <p className="main_text">{user.name}</p>
-              <a className="name_link" href={user.html_url}>
+              <a className="name_link" target="_blank" href={user.html_url}>
                 {user.login}
               </a>
             </div>
@@ -43,18 +45,18 @@ const PersonInfo = ({ message, user, setMessage }) => {
       </div>
     </div>
   ) : message === true ? (
-    <p>NOt</p>
+    <NotFoundPage/>
   ) : (
-    <p>Select user</p>
+    <StartPage/>
   );
 };
 
 const mapStateToProps = (state) => ({
   user: state.pages.user,
   message: state.pages.message,
+  isLoading: state.pages.isLoading
 });
 
 export default connect(mapStateToProps, {
   setUser: ACTIONS.setUser,
-  setMessage: ACTIONS.setMessage,
 })(PersonInfo);

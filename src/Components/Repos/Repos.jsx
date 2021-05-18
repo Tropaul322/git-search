@@ -1,11 +1,13 @@
 import { React } from "react";
-import { List } from "antd";
-import "./Repos.css";
 import { connect } from "react-redux";
+
+import "./Repos.css";
+import { List } from "antd";
 import { ACTIONS } from "../../store/actions/creators";
+import NoRepoPage from "../NoRepoPage/NoRepoPage";
 
 const Repos = ({ repos }) => {
-  return (
+  return repos.length ? (
     <div className="Repos_container">
       <h1>Repositories ({`${repos.length}`})</h1>
       <List
@@ -38,6 +40,7 @@ const Repos = ({ repos }) => {
                   className="link"
                   style={{ color: "#0064EB" }}
                   href={item.html_url}
+                  target="_blank"
                 >
                   {item.name}
                 </a>
@@ -48,8 +51,11 @@ const Repos = ({ repos }) => {
         )}
       />
     </div>
+  ) : (
+    <NoRepoPage />
   );
 };
+
 const mapStateToProps = (state) => ({
   repos: state.pages.repos,
 });
