@@ -1,37 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-.person_field {
-  height: 100%;
-}
-.person_field-container {
+.person-field__container {
   max-width: 1366px;
   height: 100%;
   margin: 0 auto;
   display: flex;
 }
-.person_info {
+.person-field__container__info {
   margin: 31px 98px 0px 57px;
 }
-.person_info2 {
+.person-field__container__description {
   margin-top: 29px;
 }
-.main_text {
+.person-field__container__description__mainText {
   margin: 0 0 12px 0;
   font-family: Inter;
   font-style: normal;
   font-weight: 700;
   font-size: 26px;
 }
-.name_link {
+.person-field__container__description__link {
   font-family: Inter;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
 }
-.person_img {
+.person-field__container__img {
   border-radius: 50%;
 }
-.person_follows {
+.person-field__container__followsInfo {
   margin-top: 25px;
   display: flex;
   font-family: Inter;
@@ -41,6 +37,29 @@
   line-height: 150%;
   color: black;
 }
-.person_follows div:nth-child(2) {
+.person-field__container__followsInfo div:nth-child(2) {
   margin-left: 25px;
+}
+
+@media screen and (max-width: 1024px) {
+  .person-field__container {
+    flex-direction: column;
+  }
+  .person-field__container__info {
+    margin: 5px auto;
+  }
+  .person-field__container__info {
+    margin: 5px auto;
+  }
+  .person-field__container__description {
+    text-align: center;
+  }
+  .person-field__container__followsInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .person-field__container__img {
+    margin-top: 10px;
+  }
 }

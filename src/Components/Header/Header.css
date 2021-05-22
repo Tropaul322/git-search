@@ -1,17 +1,26 @@
-.header{
+.header {
   width: 100%;
   background: #0064eb;
 }
-.header-container {
+
+.header__container {
   max-width: 1366px;
   height: 100%;
   margin: 0 auto;
   display: flex;
   height: 72px;
 }
-.header_logo {
+
+.header__container__logo {
   margin: 16px 0px 16px 41px;
 }
-.input_box {
+
+.header__container__input {
   margin: 16px 0px 16px 22px;
+}
+
+@media screen and (max-width: 1024px) {
+  .header__container__input {
+    margin-right: 10px;
+  }
 }

@@ -1,13 +1,14 @@
 import { React } from "react";
-
-import logo from "../../assets/Vector.svg";
 import { connect } from "react-redux";
 
 import "./Header.css";
-import { ACTIONS } from "../../store/actions/creators";
 
 import { Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
+
+import logo from "../../assets/Vector.svg";
+
+import { ACTIONS } from "../../store/actions/creators";
 
 const Header = ({ setUser, setMessage, setRepos, setLoading }) => {
   const getPerson = async (name) => {
@@ -32,10 +33,14 @@ const Header = ({ setUser, setMessage, setRepos, setLoading }) => {
 
   return (
     <div className="header">
-      <div className="header-container">
-        <img src={logo} className="header_logo" alt="header_logo"></img>
+      <div className="header__container">
+        <img
+          src={logo}
+          className="header__container__logo"
+          alt="header_logo"
+        ></img>
         <Input
-          className="input_box"
+          className="header__container__input"
           placeholder="Enter GitHub username"
           onPressEnter={(e) => {
             getPerson(e.target.value);

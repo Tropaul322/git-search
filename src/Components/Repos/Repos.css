@@ -1,27 +1,62 @@
-.link {
+.repos-container {
+  margin: 28px 0px 30px;
+}
+.list_item {
+  background: white;
+  margin-bottom: 24px;
+  width: 877px;
+  height: 112px;
+}
+
+.repos-container h1 {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 130%;
+}
+
+.repos-container__link {
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
 }
-.descr {
+.repos-container__description {
   font-family: Inter;
   width: 100%;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-
   color: #000000;
 }
-.Repos_container{
-   margin: 28px 0px 30px 
+
+@media screen and (max-width: 1024px) {
+  .repos-container h1 {
+    text-align: center;
+  }
+  .repos-container div {
+    width: 100%;
+  }
+  .item ul:nth-child(1) .list_item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
 }
-.Repos_container h1{
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 130%;
+
+@media (min-width: 1021px) and (max-width: 1440px) {
+  .repos-container {
+    width: 100%;
+    margin-right: 16px;
+  }
+  .item ul:nth-child(1) .list_item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
 }

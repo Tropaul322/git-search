@@ -1,7 +1,7 @@
 import {Provider} from 'react-redux'
 import store from './store/index'
-import './App.css';
 import "antd/dist/antd.css";
+
 import Header from './Components/Header/Header'
 import PersonInfo from './Components/PersonInfo/PersonInfo'
 
